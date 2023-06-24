@@ -16,7 +16,7 @@ const UseStateHook2 = () => {
   return (
     <div>
       <p>MY FORM</p>
-      <input type='text' placeholder='Type here' onChange={newTxt}/>
+      <input type='text' placeholder='Type here' onChange={newTxt} value={mytxt}/>
       <hr></hr>
       <h2>{mytxt}</h2>
       <hr></hr>
