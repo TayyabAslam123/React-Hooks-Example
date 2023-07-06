@@ -9,7 +9,7 @@ const UseEffectHook = () => {
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error(error));
-            console.log(dataa[0]);
+        console.log(dataa[0]);
     }, []);
 
 

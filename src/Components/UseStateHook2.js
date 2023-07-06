@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 
 const UseStateHook2 = () => {
-  const[mytxt,  SetText]=useState('tayyab Aslam');
-  
-  const newTxt=(e)=>{
+
+  //mytxt is variable and SetText is function
+  const [mytxt, SetText] = useState('tayyab Aslam');
+
+  //onChange it is called
+  const newTxt = (e) => {
     console.log(e.target.value);
     SetText(e.target.value);
   }
 
-  const cleanData=()=>{
+  //clean data 
+  const cleanData = () => {
     SetText('');
   }
 
@@ -16,7 +20,7 @@ const UseStateHook2 = () => {
   return (
     <div>
       <p>MY FORM</p>
-      <input type='text' placeholder='Type here' onChange={newTxt} value={mytxt}/>
+      <input type='text' placeholder='Type here' onChange={newTxt} value={mytxt} />
       <hr></hr>
       <h2>{mytxt}</h2>
       <hr></hr>

@@ -14,11 +14,19 @@ const UseStateHook = () => {
     // }
 
     return (
-        <div>
-            <h1>{counter}</h1>
-            <br></br>
-            <button onClick={increment}>Increment</button>
-        </div>
+        <>
+            {/* <div>
+                {counter % 2 == 0 &&
+                    <h1>{counter}</h1>
+                }
+            </div> */}
+
+            <div>
+                {counter}
+                <br></br>
+                <button onClick={increment}>Increment</button>
+            </div>
+        </>
     )
 }
 
