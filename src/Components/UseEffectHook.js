@@ -14,11 +14,19 @@ const UseEffectHook = () => {
 
 
     return (
-        <div>
-            {dataa.map((repo) => (
-                <p key={repo.id}>{repo.email}</p>
-            ))}
-        </div>
+        <>
+            <h1>Comments Data</h1>
+            <hr></hr>
+            <div>
+                {dataa.map((repo) => (
+                    <>
+                        <h2 key={repo.id}>{repo.name}</h2>
+                        <p key={repo.id}>{repo.email}</p>
+                        <hr></hr>
+                    </>
+                ))}
+            </div>
+        </>
     );
 }
 
