@@ -4,19 +4,16 @@ function UseLayoutEffectHook() {
 
   const ref = useRef(null);
 
-  // use effect called at end after component loaded 
+  // USE EFFECT CALLED AT END AFTER COMPONENT LOADED 
   useEffect(() => {
-
     console.log('Use Effect triggered !!');
-
   }, []);
 
-  // useLayoutEffect trigger before component loaded
+  // USELAYOUTEFFECT TRIGGER BEFORE COMPONENT LOADED
   useLayoutEffect(() => {
 
     console.log('Use useLayoutEffect triggered !!');
-
-    ref.current.style.backgroundColor = 'red';
+    ref.current.style.backgroundColor = 'blue';
     ref.current.style.color = 'white';
 
   }, []);
