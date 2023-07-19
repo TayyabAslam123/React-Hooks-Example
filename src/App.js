@@ -8,12 +8,12 @@ import './App.css';
 // import UseRefHook from './Components/UseRefHook';
 // import UseRefHook2 from './Components/UseRefHook2';
 // import UseRefHook5 from './Components/UseRefHook5';
-import UseLayoutEffectHook from './Components/UseLayoutEffectHook';
-
+// import UseLayoutEffectHook from './Components/UseLayoutEffectHook';
+import UseImperativeHandleHook from './Components/UseImperativeHandleHook';
 
 function App() {
   return (
-    <UseLayoutEffectHook/>
+    <UseImperativeHandleHook/>
   );
 }
 
