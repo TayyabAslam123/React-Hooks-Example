@@ -9,11 +9,12 @@ import './App.css';
 // import UseRefHook2 from './Components/UseRefHook2';
 // import UseRefHook5 from './Components/UseRefHook5';
 // import UseLayoutEffectHook from './Components/UseLayoutEffectHook';
-import UseImperativeHandleHook from './Components/UseImperativeHandleHook';
+// import UseImperativeHandleHook from './Components/UseImperativeHandleHook';
+import { UseContextHook } from './Components/UseContextHook';
 
 function App() {
   return (
-    <UseImperativeHandleHook/>
+    <UseContextHook/>
   );
 }
 

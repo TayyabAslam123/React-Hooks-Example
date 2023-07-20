@@ -13,7 +13,9 @@ const Button = forwardRef((props, ref) => {
     return (
         <>
             <button>Button From Child</button>
-            {toggle && <span>Toggle</span>}
+            <br></br>
+            <br></br>
+            <h1>{toggle && <span>Toggle !!!</span>}</h1>
         </>
     );
 
