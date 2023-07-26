@@ -8,8 +8,7 @@ const Button = forwardRef((props, ref) => {
             setToggle(!toggle);
         },
     }));
-
-
+    
     return (
         <>
             <button>Button From Child</button>
