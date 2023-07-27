@@ -1,44 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 
 const UseMemoHook = () => {
-    const [count, setCount] = useState(0);
-    const [todos, setTodos] = useState([]);
-    const calculation = expensiveCalculation(count);
-  
-    const increment = () => {
-      setCount((c) => c + 1);
-    };
-    const addTodo = () => {
-      setTodos((t) => [...t, "New Todo"]);
-    };
-  
-    return (
-      <div>
-        <div>
-          <h2>My Todos</h2>
-          {todos.map((todo, index) => {
-            return <p key={index}>{todo}</p>;
-          })}
-          <button onClick={addTodo}>Add Todo</button>
-        </div>
-        <hr />
-        <div>
-          Count: {count}
-          <button onClick={increment}>+</button>
-          <h2>Expensive Calculation</h2>
-          {calculation}
-        </div>
-      </div>
-    );
-  };
-  
-  const expensiveCalculation = (num) => {
-    console.log("Calculating...");
-    for (let i = 0; i < 1000000000; i++) {
-      num += 1;
+
+  const [myData, setData] = useState([]);
+  const [toggle, setToggle] = useState(false);
+  const [randomNum, setRandomNum] = useState(0);
+
+
+  //
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+    console.log(myData);
+  }, []);
+
+  // Function to check longest name
+  const findLongestName = (comments) => {
+    if (!comments) return null;
+
+    let longestName = "";
+    for (let i = 0; i < comments.length; i++) {
+      let currentName = comments[i].name;
+      if (currentName.length > longestName.length) {
+        longestName = currentName;
+      }
     }
-    return num;
+
+    console.log("THIS WAS COMPUTED");
+    return longestName;
   };
 
-export default UseMemoHook
+  // Memoized function
+  const getLongestName = useMemo(() => findLongestName(myData), [randomNum]);
+
+  return (
+    <>
+      <p>Use Memo Hook</p>
+      <hr></hr>
+      {getLongestName}
+      <hr></hr>
+      <button
+        onClick={() => {
+          setRandomNum(Math.random());
+          console.log(randomNum);
+        }}
+      >Generate Random Number</button>
+      <hr></hr>
+      <button
+        onClick={() => {
+          setToggle(!toggle);
+        }}
+      >
+        Toggle
+      </button>
+      <hr></hr>
+      <h1>{toggle && <span>Toggle !!!</span>}</h1>
+    </>
+  );
+}
+  export default UseMemoHook
