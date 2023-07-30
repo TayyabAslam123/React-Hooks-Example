@@ -11,11 +11,13 @@ import './App.css';
 // import UseLayoutEffectHook from './Components/UseLayoutEffectHook';
 // import UseImperativeHandleHook from './Components/UseImperativeHandleHook';
 // import { UseContextHook } from './Components/UseContextHook';
-import UseMemoHook from './Components/UseMemoHook';
+// import UseMemoHook from './Components/UseMemoHook';
+// import UseMemoHook2 from './Components/UseMemoHook2';
+import UseCallBackHook from './Components/UseCallBackHook';
 
 function App() {
   return (
-    <UseMemoHook/>
+    <UseCallBackHook/>
   );
 }
 

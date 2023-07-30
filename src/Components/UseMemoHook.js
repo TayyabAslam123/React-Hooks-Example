@@ -39,15 +39,18 @@ const UseMemoHook = () => {
   return (
     <>
       <p>Use Memo Hook</p>
+      
       <hr></hr>
-      {getLongestName}
+      {findLongestName(myData)}
       <hr></hr>
+
       <button
         onClick={() => {
           setRandomNum(Math.random());
           console.log(randomNum);
         }}
       >Generate Random Number</button>
+
       <hr></hr>
       <button
         onClick={() => {
@@ -56,9 +59,10 @@ const UseMemoHook = () => {
       >
         Toggle
       </button>
+      
       <hr></hr>
       <h1>{toggle && <span>Toggle !!!</span>}</h1>
     </>
   );
 }
-  export default UseMemoHook
+export default UseMemoHook
